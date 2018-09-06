@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>제목: <%= @tip.title %></h1>
+    <hr />
+    
+    <h3><%#= icon 'time' %><%#= local_time(@notice.created_at) %>
+        내용:  <%= @tip.content.html_safe %>
+    </h3>
+    <% if current_user == @tip.user %>
+      <%#= icon 'pencil' %><%= link_to '수정하기', edit_tip_path(@tip) %> | 
+      <%#= icon 'trash' %><%= link_to '삭제하기', tip_path, method: :delete %> |
+    <% end %>
+    <%= link_to '목록으로', :back %>
+</div>

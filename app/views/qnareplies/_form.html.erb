@@ -1,0 +1,10 @@
+<div class="container">
+
+<%= form_for(@qnareply, url: qna_qnareplies_path) do |f|%>
+    <%= f.text_field :title, label: "답글", :class => "tinymce", :rows => 100, :cols => 120 %><br>
+    <%= f.hidden_field :user_email, value: current_user.email%>
+    <%= f.hidden_field :qna_id, value: params[:qna_id]%>
+    <%= f.submit "작성"%>
+    
+<% end %>
+</div>

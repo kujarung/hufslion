@@ -1,0 +1,446 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.indexwrapper {
+    
+    position : relative;
+    background-image: -webkit-radial-gradient(circle, #bcd6fc, #d2dffd, #e4e9fd, #f3f3fe, #ffffff);
+    background-image: radial-gradient(circle, #bcd6fc, #d2dffd, #e4e9fd, #f3f3fe, #ffffff);
+    height : 1200px;
+    text-align: center; 
+    margin: 0;
+    .upperNav {
+        float : right;
+    }
+    .logoBlock {
+        min-height : 15rem;
+        p {
+            text-transform: uppercase;
+    	    letter-spacing: .5em;
+    	    display: inline-block;
+    	    border: 4px double rgba(34, 25, 25, 0.4);
+    	    border-width: .75px 0;
+    	    padding: 1em 0em;
+    	    position: absolute;
+    	    top: 3rem;
+    	    left: 50%;
+        	width: 35em;
+    	    margin: 0 0 0 -17em;
+    	    
+    	    span {
+    	        font: 700 4em/1 "Oswald", sans-serif;
+      	        letter-spacing: 0;
+      	        padding: .25em 0 .325em;
+    	        display: block;
+    	        margin: 0 auto;
+      	        text-shadow: 0 0 80px rgba(255,255,255,.5);
+      	        
+                background: url("/home/animated_text_fill(blue).png") repeat-y;
+    	        -webkit-background-clip: text;
+    	        background-clip: text;
+    	        -webkit-text-fill-color: transparent;
+    	        -webkit-animation: aitf 80s linear infinite;
+    	        -webkit-transform: translate3d(0,0,0);
+    	        -webkit-backface-visibility: hidden;
+    	    }
+        }
+        @-webkit-keyframes aitf {
+    	0% { background-position: 0% 50%; }
+    	100% { background-position: 100% 50%; }
+        }
+        .hufsBasicLogo {
+            position : absolute;
+            z-index:  100;
+            width : 5em;
+            top : 9em;
+            left : 29em;
+        }
+        .basiccLogo {
+            position : absolute;
+            z-index : 100;
+            top : 2em;
+            right : 27em;
+            width: 5em;
+        }
+        #Layer_1 {
+            position : absolute;
+            z-index : 1000;
+            top : 9rem;
+            left: 50vw;
+        }
+        
+        //글자쓰기효과//
+        .animate{
+         stroke-dasharray: 300;
+         stroke-dashoffset: 300;
+         animation: dash 0.5s linear forwards;
+        }
+        .mLetter {
+            animation-delay : 0;
+        }
+        .jengLetter {
+            animation-delay : 0.5s;
+        }
+        .yLetter {
+            animation-delay : 1s;
+        }
+        .saLetter {
+            animation-delay : 1.5s;
+        }
+        .jaLetter {
+            animation-delay : 2s;
+        }
+        .chLetter {
+            animation-delay : 2.5s;
+        }
+        .rumLetter {
+            animation-delay : 3s;
+        }
+        @keyframes dash {
+        to {
+         stroke-dashoffset: 0;
+         }
+        }
+    }
+    .carouselwrapper {
+        position : relative;
+        .carouselInner {
+            position : relative;
+            overflow : hidden;
+            height : 60rem;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+        .carousel1 {
+            .whiteBack {
+                position : absolute;
+                left : 0;
+                z-index : 0;
+                width: 100%;
+                height: 100%;
+            }
+            .fir {
+                transform : rotate(10deg);
+                position : absolute;
+                display : block;
+                left : -5%;
+                top : -10%;
+                max-width: 35vw;
+                animation : minerva 1.5s ease-in-out forwards;
+            }
+            .sec {
+                position : absolute;
+                right : -10%;
+                bottom : -5%;
+                max-width : 40vw;
+                animation : roaring 1.5s ease-in-out backwards;
+                animation-delay : 2s;
+            }
+            .hufsMeets {
+                position : relative;
+                top : 20%;
+                font-style : italic;
+                z-index : 1000;
+                .h1Hufs {
+                    font-size : 10vw;
+                    animation : hufsEmerge 2s ease-in-out both;
+                }
+                .leftCap {
+                    position : absolute;
+                    z-index : 1000;
+                    font-size : 3vw;
+                    left : 30%;
+                    color : #90AFFF;
+                    transform: rotate(-25deg);
+                    animation : leftCapEmerge 2s ease-in-out both;
+                }
+                .centerCap {
+                    position : absolute;
+                    font-size : 3vw;
+                    top : 35%;
+                    left : 40%;
+                    animation : scaler 2s ease-in-out both;
+                    animation-delay : 2s;
+                }
+                .h1Meets {
+                    position : relative;
+                    top : 150%;
+                    animation : scaler 2s ease-in-out both;
+                    animation-delay : 2s;
+                }
+                .h1Likelion {
+                    font-size : 10vw;
+                    animation : lionEmerge 2s ease-in-out both;
+                    animation-delay : 3.2s;
+                }
+                .lastCap {
+                    font-size : 4vw;
+                    position : absolute;
+                    top : 90%;
+                    left : 50%;
+                    color : #F4A460;
+                    animation : roaring 2s ease-in-out both;
+                    animation-delay : 3s;
+                }
+            }
+            .shooong {
+                position : absolute;
+                width : 4%;
+                height: 5%;
+                left : 72%;
+                top : 50%;
+                z-index: 1000;
+                animation : shoong 3s linear both;
+                animation-delay : 4.5s;
+            }
+            @keyframes shoong {
+                0% {
+                    opacity: 0;
+                    transform : scale(0, 0);
+                }
+                50% {
+                    opacity : 0.5;
+                    transform : scale (1.5, 1.5);
+                }
+                100% {
+                    opacity : 0;
+                    transform : scale(3, 3);
+                }
+            }
+            @keyframes minerva {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50px, -50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+            }
+            @keyframes leftCapEmerge {
+                0% {
+                    opacity: 0;
+                    transform:  translate(-50px, 50px) rotate(-25deg);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0, 0) rotate(-25deg);
+                }
+            }
+            @keyframes roaring {
+                0% {
+                    opacity: 0;
+                    transform : translate(50px, 50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform : translate(0, 0);
+                }
+            }
+            @keyframes hufsEmerge {
+                0% {
+                    transform : translateX(-100vw);
+                }
+                100% {
+                    transform : translateX(0);
+                    color : #90AFFF;
+                }
+            }
+            @keyframes lionEmerge {
+                0% {
+                    transform : translateX(100vw);
+                }
+                100% {
+                    trasnform : translateX(0);
+                    color : #F4A460;
+                }
+            }
+            @keyframes scaler {
+                0% {
+                    transform : scale(0, 0);
+                }
+                100% {
+                    transform : sacle(1, 1);
+                }
+            }
+        }
+        
+        .carousel2 {
+            .byMyhand {
+                position : absolute;
+                left : 30%;
+                top : 40%;
+                color : white;
+                .nonMajor {
+                    animation : hufsEmerge 2s ease-in-out both;   
+                }
+                .serviceByMe {
+                    font-size : 3.5vw;
+                }
+                .changeWorld {
+                    animation : lionEmerge 2s ease-in-out both;
+                }
+            }
+            .coading {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        .carousel3 {
+            h1 {
+                position : relative;
+                font-size : 4.5em;
+                top : 1em;
+                z-index: 100;
+                color : white;
+                animation : h1Emerge 2s ease-in-out both;
+                &::before {
+                    content : "";
+                    border-bottom : 1px solid;
+                    display : block;
+                    position : relative;
+                    top : 0;
+                    width :  8em;
+                    margin : 0 auto 0 auto;
+                    animation : lineScale 2s ease-in-out both;
+                    animation-delay : 1.5s;
+                }
+                &::after {
+                    content : "";
+                    border-top : 1px solid;
+                    display : block;
+                    position : relative;
+                    top : -.1em;
+                    width :  8em;
+                    margin : 0 auto 0 auto;
+                    animation : lineScale 2s ease-in-out both;
+                    animation-delay : 1.5s;
+                }
+            }
+            @keyframes h1Emerge {
+                0% {
+                    opacity : 0;
+                    transform : translateY(10vh);
+                }
+                100% {
+                    opacity : 1;
+                    transform : translateY(0);
+                }
+            }
+            @keyframes lineScale {
+                0% {
+                    transform : scaleX(0);
+                }
+                100% {
+                    transform : scaleX(1);
+                }
+            }
+            .thirdBack {
+                position : absolute;
+                left : 0;
+                z-index : 0;
+                width: 100%;
+                height: 100%;
+            }
+            .nameTag {
+                position : relative;
+                top : 9em;
+                z-index : 100;
+                color : white;
+                img {
+                    height : 20em;
+                    border-radius : 50px;
+                }
+            }
+        }
+        
+        .carousel4 {
+            h1 {
+                position : relative;
+                font-size : 4.5em;
+                top : 1em;
+                z-index: 100;
+                color : white;
+                animation : h1Emerge 2s ease-in-out both;
+                &::before {
+                    content : "";
+                    border-bottom : 1px solid;
+                    display : block;
+                    position : relative;
+                    top : 0;
+                    width :  6em;
+                    margin : 0 auto 0 auto;
+                    animation : lineScale 2s ease-in-out both;
+                    animation-delay : 1.5s;
+                }
+                &::after {
+                    content : "";
+                    border-top : 1px solid;
+                    display : block;
+                    position : relative;
+                    top : -.1em;
+                    width :  6em;
+                    margin : 0 auto 0 auto;
+                    animation : lineScale 2s ease-in-out both;
+                    animation-delay : 1.5s;
+                }
+            }
+            .thirdBack {
+                position : absolute;
+                left : 0;
+                z-index : 0;
+                width: 100%;
+                height: 100%;
+            }
+            .nameTag {
+                position : relative;
+                top : 9em;
+                z-index : 100;
+                color : white;
+                img {
+                    height : 20em;
+                    margin-bottom : 1em;
+                    border-radius : 50px;
+                }
+            }
+        }
+    }
+    
+    .navbar {
+        //bottom : -5rem;
+    }
+    
+    // 이성준 css
+    .sorry {
+        font: 300 2em/1 "Oswald", sans-serif;
+        margin-top: 150px;
+    }
+}
+
+
+
+/////////////////////////////
+///////디바이스 CSS//////////
+/////////////////////////////
+
+
+.deviseContainer {
+    height : 50rem;
+    background-image: -webkit-radial-gradient(circle, #bcd6fc, #d2dffd, #e4e9fd, #f3f3fe, #ffffff);
+    background-image: radial-gradient(circle, #bcd6fc, #d2dffd, #e4e9fd, #f3f3fe, #ffffff);
+    font-family: 'Gugi', cursive;
+    .deviseInner {
+        position : relative;
+        border : 1px solid black;
+        padding : 5rem;
+        top : 7rem;
+        color : #F4A460;
+        a:link { color: red; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color: blue; text-decoration: underline;}
+        h1 {
+            text-align : center;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<h1>Hack Your Life(질문)</h1>
+<div class="table-responsive">
+  <table class="table table-fit">
+    <thead>
+      <tr>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @qnas.each do |qna| %>
+        <tr>
+          <td><%= qna.id %></td>
+          <td><%= link_to qna.title, qna %></td>
+          <td><%= qna.user.email %></td>
+          <td><%#= notice.comments.count %></td>
+        </tr>
+        <!-- 답글 한칸 들여쓰고 re:로 시작하기 -->
+        <% if qna.qnareplies.empty? %>
+            <% else %>
+                <% qna.qnareplies.each do |y| %>
+                    <tr onclick="window.location='/qnas/<%=x.id%>';">
+                        <td></td>
+                        <td>RE:</td>
+                        <td><%=y.title%></td>
+                        <td></td>
+                        <td><%=y.user_name%></td>
+
+                        <td><%=y.created_at.strftime("%Y.%m.%d %H:%M")%></td>
+                    </tr>
+                <%end%>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= paginate @notices %>
+    <%= link_to "새글 작성", new_qna_path %> |
+    <%= link_to "홈으로", private_index_path %>
+</div>
+
+<%= will_paginate @qnas %>

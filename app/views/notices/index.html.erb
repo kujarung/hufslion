@@ -1,0 +1,27 @@
+<h1>Hack Your Life(공지)</h1>
+<div class="table-responsive">
+  <table class="table table-fit">
+    <thead>
+      <tr>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @notices.each do |notice| %>
+        <tr>
+          <td><%= notice.id %></td>
+          <td><%= link_to notice.title, notice %></td>
+          <td><%= notice.user.email %></td>
+          <td><%#= notice.comments.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= paginate @notices %>
+    <%= link_to "새글 작성", new_notice_path %> |
+    <%= link_to "홈으로", private_index_path %>
+</div>
+
+<%= will_paginate @notices %>

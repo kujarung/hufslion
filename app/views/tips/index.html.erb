@@ -1,0 +1,28 @@
+<h1>Hack Your Life(공유자료)</h1>
+<div class="table-responsive">
+  <table class="table table-fit">
+    <thead>
+      <tr>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tips.each do |tip| %>
+        <tr>
+          <td><%= tip.id %></td>
+          <td><%= link_to tip.title, tip %></td>
+          <td><%= tip.user.email %></td>
+          <td><%#= notice.comments.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= paginate @notices %>
+    <%= link_to "새글 작성", new_tip_path %> |
+    <%= link_to "홈으로", private_index_path %>
+</div>
+
+
+<%= will_paginate @tips %>

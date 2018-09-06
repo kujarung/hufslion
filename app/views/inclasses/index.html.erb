@@ -1,0 +1,42 @@
+<h1>Hack Your Life(자료)</h1>
+<div class="table-responsive">
+  <table class="table table-fit">
+    <thead>
+      <tr>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inclasses.each do |inclass| %>
+        <tr>
+          <td><%= inclass.id %></td>
+          <td><%= link_to inclass.title, inclass %></td>
+          <td><%= inclass.user.email %></td>
+          <td><%#= notice.comments.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= paginate @notices %>
+    <%= link_to "새글 작성", new_inclass_path %> |
+    <%= link_to "홈으로", private_index_path %>
+</div>
+
+<%= will_paginate @inclasses %>
+
+<!--
+<h1>Inclasses#index</h1>
+<p>Find me in app/views/inclasses/index.html.erb</p>
+
+<%#= link_to "새글 작성", new_inclass_path %>
+<#% @inclasses.each do |x|%>
+<h2>제목: <#%= x.title %> </h2>
+<p>내용: <#%= x.content %> </p>
+<p>글쓴이: <#%=x.user.email%> </p>
+<#%= link_to "수정하기", edit_inclass_path(x)%>
+<#%= link_to '삭제하기', x, method: :delete%>
+<#% end %>
+
+--!>
