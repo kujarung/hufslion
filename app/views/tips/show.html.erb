@@ -1,13 +1,24 @@
-<div class="container">
-    <h1>제목: <%= @tip.title %></h1>
-    <hr />
+<div class="container-fluid showWrapper">
     
-    <h3><%#= icon 'time' %><%#= local_time(@notice.created_at) %>
-        내용:  <%= @tip.content.html_safe %>
-    </h3>
+    <nav class="navbar fixed-top navbar-dark bg-dark privateNav">
+        <a class="navbar-brand" href="/"><span style="color:#5B7DFF;">HUFSLION</span> x <span style="color:#FFCA50;">멋쟁이외대처럼</span></a>
+    </nav>
+    
+    <div class = "showH1"><h1><%= @tip.title %></h1> <%= link_to '목록으로', :back %> </div>
+    
+    <h1 class = "headContent">공유자료 내용</h1>
+    <div class = "showContent">
+        <h3><%#= icon 'time' %><%#= local_time(@notice.created_at) %>
+        <%= @tip.content.html_safe %>
+        </h3>
+    </div>
+    
+    
+    <div class = "showFoot">
     <% if current_user == @tip.user %>
-      <%#= icon 'pencil' %><%= link_to '수정하기', edit_tip_path(@tip) %> | 
-      <%#= icon 'trash' %><%= link_to '삭제하기', tip_path, method: :delete %> |
+      <%#= icon 'pencil' %><%= link_to '수정하기', edit_tip_path(@tip) %>
+      <%#= icon 'trash' %><%= link_to '삭제하기', tip_path, method: :delete %>
     <% end %>
     <%= link_to '목록으로', :back %>
+    </div>
 </div>

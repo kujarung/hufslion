@@ -1,3 +1,329 @@
 // Place all the styles related to the qnas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/////////////////////////
+////4개 게시판 동일CSS///
+/////////////////////////
+
+/////////////////////////
+/////인덱스 페이지///////
+/////////////////////////
+
+.boardWrapper {
+    text-align: center;
+    
+    .privateNav {
+        text-align : center;
+        font-family: 'TmonMonsori';
+        display : inline-block;
+        float : none;
+        vertical-align: top;
+    }
+    
+    .rightH1 {
+        width: 100vw;
+        height: 10em;
+        margin: 3.5em auto auto auto;
+        padding : 3em 5em 3em 3em;
+        background-image: linear-gradient(to left, #c9d5ff, #dadfff, #e8e9fe, #f4f4ff, #ffffff);
+        h1 {
+            float : right;
+            font-family: 'Black Han Sans', sans-serif;
+            font-size : 65px;
+            animation : leftH1Emerge 1.5s ease both;
+        }
+    }
+    @keyframes leftH1Emerge {
+        0% {
+            opacity: 0;
+            transform : translateX(-50vw);
+        }
+        100% {
+            opacity: 1;
+            transform : translateX(0);
+        }
+    }
+    
+    .table-responsive {
+        margin : auto 3em auto 3em;
+        //border: 1px solid grey;
+        //box-shadow : 0.25px 0.25px 0.25px 0.25px grey;
+        th {
+            text-align: center;
+        }
+        tr {
+            transition : transform .5s ease;
+            &:hover {
+                transform : scale(1.01, 1.01);
+            }
+        }
+    }
+    
+    a {
+        transition : color .5s ease;
+    }
+    
+    a:link { color: black; text-decoration: none;}
+    a:visited { color: black; text-decoration: none;}
+    a:hover { color:  #5B7DFF; text-decoration: none;}
+}
+
+
+
+///////////////////////////////
+////////////쇼페이지///////////
+///////////////////////////////
+.showWrapper {
+    // background-image : url("/home/whiteback.png");
+    // background-size : cover;
+    height : 100vh;
+    text-align : center;
+    font-family: 'Song Myung', serif;
+    
+        
+    .privateNav {
+        text-align : center;
+        font-family: 'TmonMonsori';
+        display : inline-block;
+        float : none;
+        vertical-align: top;
+        a {
+            transition : color .5s ease;
+        }
+        
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:  white; text-decoration: none;}
+    }
+    
+    
+    
+    .showH1 {
+        font-family: 'Black Han Sans', sans-serif;
+        position : relative;
+        display : block;
+        top : 3em;
+        padding-top: 1.5em;
+        padding-bottom : 1em;
+        background-image: linear-gradient(to right, #e7ecff, #faebfa, #ffedf1, #fff1e9, #fff8e8);
+        &:before {
+            content : "";
+            display: inline-block;
+            position : relative;
+            top : .1em;
+            width: 25%;
+            border-bottom : 1.5px double grey;
+            animation : lineMake 1s ease both;
+        }
+        
+        &:after {
+            content : "";
+            display: inline-block;
+            position : relative;
+            top : -1.5em;
+            left : 2.2em;
+            width: 25%;
+            border-bottom : 1.5px double grey;
+            animation : lineMake 1s ease both;
+        }
+        
+        @keyframes lineMake {
+            0% {
+                transform : scaleX(0);
+            }
+            100% {
+                transform : scaleX(1);
+            }
+        }
+    }
+    
+    .headContent {
+        margin : 1.8em auto 0 auto;
+        padding-left : 2em;
+        text-align : left;
+    }
+    
+    
+    .showContent {
+        // position : relative;
+        // display : block;
+        //border : 1px solid black;
+        box-shadow : .1px .1px .1px .1px grey;
+        text-align : left;
+        margin : 1em 5em 1em 5em;
+        padding : 1em 1em 0.5em 1em;
+    }
+    
+    .headReply {
+        margin : 1.5em auto 0 auto;
+        padding-left : 5em;
+        text-align : left;
+        span {
+            font-size : 2.5rem;
+        }
+        a {
+            transition : color .5s ease;
+            margin-left: 1em;
+        }
+        
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:  #5B7DFF; text-decoration: none;}
+    }
+    
+    
+    .showReply {
+        //border : 1px solid black;
+        box-shadow : .1px .1px .1px .1px grey;
+        text-align : left;
+        margin : 1em 5em 1em 5em;
+        padding : 1em 1em 0.5em 1em;
+        .well {
+            margin : .5em auto .5em auto;
+            .replayDes {
+                float : right;
+            }
+        }
+        
+        a {
+            transition : color .5s ease;
+        }
+        
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:  #5B7DFF; text-decoration: none;}
+        
+    }
+    
+    
+    
+    .showH1 , .showFoot{
+        a {
+            transition : color .5s ease;
+            float : right;
+            margin-right: 1em;
+        }
+        
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:  #5B7DFF; text-decoration: none;}
+    }
+}
+
+
+//////////////////////////
+//////에딧, 뉴페이지//////
+//////////////////////////
+
+.newWrapper, .editWrapper {
+    
+    text-align : center;
+    font-family: 'Song Myung', serif;
+    background-image : url("/home/whiteback.png");
+    background-size : cover;
+    height: 100vh;
+
+    .privateNav {
+        text-align : center;
+        font-family: 'TmonMonsori';
+        display : inline-block;
+        float : none;
+        vertical-align: top;
+        a {
+            transition : color .5s ease;
+        }
+        
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:  white; text-decoration: none;}
+    }
+    
+    .editNewContent {
+        .editNewH1Part {
+            font-family: 'Black Han Sans', sans-serif;
+            position : relative;
+            display : block;
+            z-index : 5;
+            top : 3.5em;
+            padding-top: 1.5em;
+            padding-bottom : 1em;
+            margin-bottom : 5em;
+            background-image: linear-gradient(to right, #e7ecff, #faebfa, #ffedf1, #fff1e9, #fff8e8);
+        }
+        h1 {
+            animation : slightEmerge 1.5s ease both;
+        }
+        @keyframes slightEmerge {
+            0% {
+                opacity: 0;
+                transform : translateY(50%);
+            }
+            100% {
+                opacity: 1;
+                transform : translateY(0);
+            }
+        }
+        h3 {
+            margin : auto auto 1em auto;
+        }
+        
+        a {
+            transition : color .5s ease;
+        }
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:  #5B7DFF; text-decoration: none;}
+        
+    }
+}
+
+
+/////////////////////
+///////폼 파트///////
+/////////////////////
+
+.formPart {
+    //border : 1px solid grey;
+    margin : auto 3em auto 3em;
+    padding-bottom : 1em;
+    
+    label {
+        display : block;
+        font-size : 2rem;
+    }
+    .firstInput {
+        input {
+            width: 60%;
+            height: 4rem;
+            border-radius : 5px;
+        }
+    }
+    .secondInput {
+        textarea {
+            width: 60%;
+            height : 10rem;
+            border-radius : 5px;
+        }
+    }
+    .btn {
+        width : 5em;
+    }
+}
+
+
+/////////////////
+/////댓글NEW/////
+/////////////////
+
+.replyPart {
+    .replyField {
+        width: 60%;
+        height : 4rem;
+        border-radius : 5px;
+    }
+    .replybutton {
+        margin-top : 1em;
+    }
+}

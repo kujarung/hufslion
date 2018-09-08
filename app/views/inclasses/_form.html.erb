@@ -1,8 +1,10 @@
-<%= simple_form_for @inclass do |f| %>
-
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
-    <%= f.button :submit%>
-
-<% end %>
+<div class = "formPart">
+    <%= simple_form_for @inclass do |f| %>
+    
+        <%= f.input :title, label: '제목', wrapper_html: {class: 'firstInput'} %>
+        <%= f.input :content, label: '내용', wrapper_html: {class: 'secondInput'}%>
+        <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+        <%= f.button :submit, "제출" %>
+    
+    <% end %>
+</div>

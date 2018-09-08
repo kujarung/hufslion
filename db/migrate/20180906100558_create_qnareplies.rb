@@ -6,6 +6,7 @@ class CreateQnareplies < ActiveRecord::Migration
       t.text :content
       t.string :user_name
       t.belongs_to :qna, index: true, foreign_key: true
+      t.belongs_to :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

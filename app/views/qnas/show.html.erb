@@ -1,29 +1,41 @@
-<div class="container">
-    <h1>제목: <%= @qna.title %></h1>
-    <hr />
-    
+<div class="container-fluid showWrapper">
+  
+  <nav class="navbar fixed-top navbar-dark bg-dark privateNav">
+    <a class="navbar-brand" href="/"><span style="color:#5B7DFF;">HUFSLION</span> x <span style="color:#FFCA50;">멋쟁이외대처럼</span></a>
+  </nav>
+  
+  <div class = "showH1"><h1><%= @qna.title %></h1> <%= link_to '목록으로', :back %> </div>
+  
+  <h1 class = "headContent">질문 내용</h1>
+  <div class = "showContent">
     <h3><%#= icon 'time' %><%#= local_time(@notice.created_at) %>
-        내용:  <%= @qna.content.html_safe %>
+      <%= @qna.content.html_safe %>
     </h3>
-    
-    <a href = '/qnas/<%=@qna.id%>/qnareplies/new'>답글 작성</a>
-    <br>
+  </div>
+  
+  <div class = "headReply" ><span>답변</span> <a href = '/qnas/<%=@qna.id%>/qnareplies/new'>답글 작성</a> </div>
+  <div class = "showReply">
+    <% if @qna.qnareplies.empty? %>
+    <div>현재 답변이 등록되지 않았습니다.</div>
+    <% else %>
     <% @qna.qnareplies.each do |x|%>
     <div class="well">
-      답글: <strong><%= x.title %></strong> / 작성자 : <%=x.user_email%><br>
-      <%= simple_format(x.content) %>
+      답글: <strong><%= x.title %></strong> / 작성자 : <%=x.user_email%>
+      <%#= simple_format(x.content) %>
         <%if user_signed_in? && x.user_email == current_user.email%>
-          <%=link_to '답글삭제', qna_qnareply_path(:id => "#{x.id}", :qna_id=> "#{@qna.id}"), method: :delete %>
+          <%=link_to '답글삭제', qna_qnareply_path(:id => "#{x.id}", :qna_id=> "#{@qna.id}"), method: :delete, :class => "replayDes" %>
         <%else%>
         <%end%>
       </div>
       <%end%>
-      <br>
+    <%end%>
+  </div>  
     
-    
+  <div class = "showFoot">
     <% if current_user == @qna.user %>
-      <%#= icon 'pencil' %><%= link_to '수정하기', edit_qna_path(@qna) %> | 
-      <%#= icon 'trash' %><%= link_to '삭제하기', qna_path, method: :delete %> |
+      <%#= icon 'pencil' %><%= link_to '수정하기', edit_qna_path(@qna) %>
+      <%#= icon 'trash' %><%= link_to '삭제하기', qna_path, method: :delete %>
     <% end %>
     <%= link_to '목록으로', :back %>
+  </div>
 </div>

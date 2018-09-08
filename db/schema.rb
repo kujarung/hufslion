@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180906110537) do
+ActiveRecord::Schema.define(version: 20180906100558) do
 
   create_table "inclasses", force: :cascade do |t|
     t.string   "title"
@@ -22,17 +22,6 @@ ActiveRecord::Schema.define(version: 20180906110537) do
   end
 
   add_index "inclasses", ["user_id"], name: "index_inclasses_on_user_id"
-
-  create_table "noticecomments", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "noticecomments", ["post_id"], name: "index_noticecomments_on_post_id"
-  add_index "noticecomments", ["user_id"], name: "index_noticecomments_on_user_id"
 
   create_table "notices", force: :cascade do |t|
     t.string   "title"
@@ -50,11 +39,13 @@ ActiveRecord::Schema.define(version: 20180906110537) do
     t.text     "content"
     t.string   "user_name"
     t.integer  "qna_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "qnareplies", ["qna_id"], name: "index_qnareplies_on_qna_id"
+  add_index "qnareplies", ["user_id"], name: "index_qnareplies_on_user_id"
 
   create_table "qnas", force: :cascade do |t|
     t.string   "title"

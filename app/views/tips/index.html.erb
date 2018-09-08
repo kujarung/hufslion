@@ -1,28 +1,31 @@
-<h1>Hack Your Life(공유자료)</h1>
-<div class="table-responsive">
-  <table class="table table-fit">
-    <thead>
-      <tr>
-        <th>글번호</th>
-        <th>제목</th>
-        <th>작성자</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tips.each do |tip| %>
+<div class= "container-fluid boardWrapper">
+  <nav class="navbar fixed-top navbar-dark bg-dark privateNav">
+    <a class="navbar-brand" href="/"><span style="color:#5B7DFF;">HUFSLION</span> x <span style="color:#FFCA50;">멋쟁이외대처럼</span></a>
+  </nav>
+  <div class="rightH1"><h1>멋사끼리</h1></div>
+  <div class="table-responsive">
+    <table class="table table-fit">
+      <thead>
         <tr>
-          <td><%= tip.id %></td>
-          <td><%= link_to tip.title, tip %></td>
-          <td><%= tip.user.email %></td>
-          <td><%#= notice.comments.count %></td>
+          <th>글번호</th>
+          <th>제목</th>
+          <th>작성자</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%#= paginate @notices %>
-    <%= link_to "새글 작성", new_tip_path %> |
-    <%= link_to "홈으로", private_index_path %>
+      </thead>
+      <tbody>
+        <% @tips.each do |tip| %>
+          <tr>
+            <td><%= tip.id %></td>
+            <td><%= link_to tip.title, tip %></td>
+            <td><%= tip.user.email %></td>
+            <td><%#= notice.comments.count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%#= paginate @notices %>
+      <%= link_to "새글 작성", new_tip_path %> |
+      <%= link_to "홈으로", private_index_path %>
+  </div>
+  <%= will_paginate @tips %>
 </div>
-
-
-<%= will_paginate @tips %>

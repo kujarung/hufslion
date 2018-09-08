@@ -1,6 +1,35 @@
-<h1>Private#index</h1>
-<p>여기는 이제 가입한 멤버들이 보게될 홈 페이지가 될 것 같습니다.</p>
-<%= link_to "공지", notices_path %> |
-<%= link_to "질문", qnas_path %> |
-<%= link_to "멋사자료", inclasses_path %> |
-<%= link_to "팁", tips_path %>
+<script>
+var bodyBefore = CSSRulePlugin.getRule(".privatewrapper:before");
+var bodyAfter = CSSRulePlugin.getRule(".privatewrapper:after");
+var middleT = CSSRulePlugin.getRule(".middleText");
+
+var tl=new TimelineMax({delay:0.1,repeat:0,yoyo:false,repeatDelay:0})
+.to(middleT,1,{autoAlpha:0})
+.to(bodyAfter,1,{cssRule:{scaleY:0}},'gate')
+.to(bodyBefore,1,{cssRule:{scaleY:0}},'gate')
+
+</script>
+
+<div class = "container-fluid privatewrapper">
+    <div class ="middleText">WELCOM TO THE DUNGEON</div>
+    <nav class="navbar fixed-top navbar-dark bg-dark privateNav">
+        <a class="navbar-brand" href="/"><span style="color:#5B7DFF;">HUFSLION</span> x <span style="color:#FFCA50;">멋쟁이외대처럼</span></a>
+    </nav>
+    <div class = "privateContent">
+        <h1>print "Welcome to <span style="color:#5B7DFF;">HUFS</span><span style="color:#FFCA50;">LION!</span>\n"</h1>
+        <img class = "keeper" src = "/private/keeper.gif" alt = "/">
+        <div class="balloon">가고자 하는 던젼을<br> 선택하게 용사여</div>
+        <div class="row">
+            <%= link_to "공지사항", notices_path, :class => "col notice" %>
+            <%= link_to "질문게시판", qnas_path, :class => "col quest" %>
+            <div class="w-100"></div>
+            <%= link_to "세션자료", inclasses_path, :class => "col material" %>
+            <%= link_to "공유자료", tips_path, :class => "col tips" %>
+        </div>
+    </div>
+    <nav class="navbar navbar-light downNav" style="background-color: #e3f2fd;">
+        <span class="navbar-text">
+          <해당 사이트는 한국외대 멋사 6기 프로젝트로 제작되었습니다.>
+        </span>
+    </nav>
+</div>

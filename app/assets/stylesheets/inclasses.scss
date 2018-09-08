@@ -1,3 +1,29 @@
 // Place all the styles related to the inclasses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.leftH1 {
+    width: 100vw;
+    height: 10em;
+    margin: 3.5em auto auto auto;
+    padding : 3em 3em 3em 5em;
+    background-image: linear-gradient(to right, #feebc1, #ffe9d8, #ffeef1, #fff7ff, #ffffff);
+    h1 {
+        float : left;
+        font-family: 'Black Han Sans', sans-serif;
+        font-size : 65px;
+        animation : rightH1Emerge 1.5s ease both;
+    }
+}
+
+@keyframes rightH1Emerge {
+    0% {
+        opacity: 0;
+        transform : translateX(50vw);
+    }
+    100% {
+        opacity: 1;
+        transform : translateX(0);
+    }
+}
