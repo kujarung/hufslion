@@ -13,6 +13,9 @@
 
 .boardWrapper {
     text-align: center;
+    //overflow-x : hidden;
+    background-image : url("/home/whiteback.png");
+    background-size : cover;
     
     .privateNav {
         text-align : center;
@@ -20,12 +23,13 @@
         display : inline-block;
         float : none;
         vertical-align: top;
+        width : 100vw;
     }
     
     .rightH1 {
-        width: 100vw;
+        width: 100%;
         height: 10em;
-        margin: 3.5em auto auto auto;
+        margin: 3.5em 0 auto 0;
         padding : 3em 5em 3em 3em;
         background-image: linear-gradient(to left, #c9d5ff, #dadfff, #e8e9fe, #f4f4ff, #ffffff);
         h1 {
@@ -48,8 +52,7 @@
     
     .table-responsive {
         margin : auto 3em auto 3em;
-        //border: 1px solid grey;
-        //box-shadow : 0.25px 0.25px 0.25px 0.25px grey;
+        //padding : auto 3em auto 3em;
         th {
             text-align: center;
         }
@@ -68,6 +71,16 @@
     a:link { color: black; text-decoration: none;}
     a:visited { color: black; text-decoration: none;}
     a:hover { color:  #5B7DFF; text-decoration: none;}
+    
+    .pagination {
+        display : inline-block;
+        float : none;
+        vertical-align: top;
+        
+        .current {
+            color : #5B7DFF;
+        }
+    }
 }
 
 
@@ -76,30 +89,12 @@
 ////////////쇼페이지///////////
 ///////////////////////////////
 .showWrapper {
-    // background-image : url("/home/whiteback.png");
-    // background-size : cover;
-    height : 100vh;
     text-align : center;
     font-family: 'Song Myung', serif;
-    
-        
-    .privateNav {
-        text-align : center;
-        font-family: 'TmonMonsori';
-        display : inline-block;
-        float : none;
-        vertical-align: top;
-        a {
-            transition : color .5s ease;
-        }
-        
-        a:link { color: black; text-decoration: none;}
-        a:visited { color: black; text-decoration: none;}
-        a:hover { color:  white; text-decoration: none;}
-    }
-    
-    
-    
+    background-image : url("/home/whiteback.png");
+    background-size : cover;
+    height : 100vh;
+
     .showH1 {
         font-family: 'Black Han Sans', sans-serif;
         position : relative;
@@ -147,9 +142,6 @@
     
     
     .showContent {
-        // position : relative;
-        // display : block;
-        //border : 1px solid black;
         box-shadow : .1px .1px .1px .1px grey;
         text-align : left;
         margin : 1em 5em 1em 5em;
@@ -175,7 +167,6 @@
     
     
     .showReply {
-        //border : 1px solid black;
         box-shadow : .1px .1px .1px .1px grey;
         text-align : left;
         margin : 1em 5em 1em 5em;
@@ -224,21 +215,6 @@
     background-image : url("/home/whiteback.png");
     background-size : cover;
     height: 100vh;
-
-    .privateNav {
-        text-align : center;
-        font-family: 'TmonMonsori';
-        display : inline-block;
-        float : none;
-        vertical-align: top;
-        a {
-            transition : color .5s ease;
-        }
-        
-        a:link { color: black; text-decoration: none;}
-        a:visited { color: black; text-decoration: none;}
-        a:hover { color:  white; text-decoration: none;}
-    }
     
     .editNewContent {
         .editNewH1Part {
@@ -285,7 +261,6 @@
 /////////////////////
 
 .formPart {
-    //border : 1px solid grey;
     margin : auto 3em auto 3em;
     padding-bottom : 1em;
     

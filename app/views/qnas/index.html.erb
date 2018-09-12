@@ -1,7 +1,4 @@
 <div class= "container-fluid boardWrapper">
-  <nav class="navbar fixed-top navbar-dark bg-dark privateNav">
-    <a class="navbar-brand" href="/"><span style="color:#5B7DFF;">HUFSLION</span> x <span style="color:#FFCA50;">멋쟁이외대처럼</span></a>
-  </nav>
   <div class = "rightH1"><h1>질문 게시판</h1></div>
   <div class="table-responsive">
     <table class="table table-fit">
@@ -21,20 +18,20 @@
             <td><%#= notice.comments.count %></td>
           </tr>
           <!-- 답글 한칸 들여쓰고 re:로 시작하기 -->
-          <% if qna.qnareplies.empty? %>
-              <% else %>
-                  <% qna.qnareplies.each do |y| %>
-                      <tr onclick="window.location='/qnas/<%=y.id%>';">
-                          <td></td>
-                          <td>RE:</td>
-                          <td><%=y.title%></td>
-                          <td></td>
-                          <td><%=y.user_name%></td>
+          <%# if qna.qnareplies.empty? %>
+              <%# else %>
+                  <%# qna.qnareplies.each do |y| %>
+                      <!--<tr onclick="window.location='/qnas/<%#=y.id%>';">-->
+                      <!--    <td></td>-->
+                      <!--    <td>RE:</td>-->
+                      <!--    <td><%#=y.title%></td>-->
+                      <!--    <td></td>-->
+                      <!--    <td><%#=y.user_name%></td>-->
   
-                          <td><%=y.created_at.strftime("%Y.%m.%d %H:%M")%></td>
-                      </tr>
-                  <%end%>
-          <% end %>
+                      <!--    <td><%#=y.created_at.strftime("%Y.%m.%d %H:%M")%></td>-->
+                      <!--</tr>-->
+                  <%#end%>
+          <%# end %>
         <% end %>
       </tbody>
     </table>

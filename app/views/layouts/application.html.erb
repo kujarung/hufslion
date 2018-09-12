@@ -8,17 +8,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <%= csrf_meta_tags %>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gugi|Song+Myung" rel="stylesheet">
+
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<% if user_signed_in?%>
+<div class= "container-fluid boardWrapper">
+ <nav class="navbar fixed-top navbar-dark bg-dark privateNav">
+    <a class="navbar-brand" href="/private/index"><span style="color:#5B7DFF;">HUFSLION</span> x <span style="color:#FFCA50;">멋쟁이외대처럼</span></a>
+  </nav>
+</div>
+<% end %>
+<!--Move your navbar to partial, and render partial conditionally:-->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSRulePlugin.min.js"></script>
+<!-- _nav_bar.html.erb -->
+<!--<div class="nav"> ... </div>-->
 
-<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gugi|Song+Myung" rel="stylesheet">
+<!-- application.html.erb -->
+<!--<%# unless @skip_navbar %>-->
+<!--  <%#= render partial: 'nav_bar' %>-->
+<!--<%# end %>-->
+<!--Then in your controller set the condition variable:-->
 
+<!--def login-->
+<!--  @skip_navbar = true-->
+<!--  # ...-->
+<!--end-->
 <%= yield %>
 
 </body>
