@@ -6,6 +6,9 @@ before_action :set_inclass, only: [:show, :edit, :update, :destroy]
   end
   
   def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def new

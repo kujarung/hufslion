@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   has_many :qnas
   has_many :inclasses
   has_many :tips
+  has_many :posts
+  has_many :comments
 end

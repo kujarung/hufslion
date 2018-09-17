@@ -10,6 +10,8 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 #폼 쉽게 만들어주는 잼
 gem 'simple_form'
+#wysiwyg
+gem 'tinymce-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

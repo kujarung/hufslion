@@ -17,7 +17,12 @@ Rails.application.routes.draw do
   resources :inclasses
   resources :tips
   
+  get '/posts/new/:type' => 'posts#new'
+  post '/posts/new' => 'posts#create'
+  post '/comments' => 'comments#create'
+  delete '/comments/:id' => 'comments#destroy'
+  
 #여기 아래에 routes 코드 넣지 말것
-  get '/sorry' => 'home#sorry'
-  get '*path' => redirect('/sorry') 
+  # get '/sorry' => 'home#sorry'
+  # get '*path' => redirect('/sorry') 
 end
