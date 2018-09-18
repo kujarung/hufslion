@@ -64,44 +64,73 @@
         display : block;
         position : relative;
         top : 6em;
-        .keeper {
-            width : 30em;
-            height: 15em;
+        .keeperBallon{
+            width : 100%;
+            height : 15em;
+            margin : auto auto 1em auto;
+            text-align : center;
+            
+            @media(min-width : 760px){
+            .keeper {
+            width : 35vw;
+            height: 100%;
             box-shadow : .5px .5px .5px .5px;
             margin : auto auto 15px auto;
-        }
-        .balloon {
-            display: inline-block;
-            position: absolute;
-            background: #ccc;
-            height: 5em;
-            width: 15em;
-            top : 3.5em;
-            padding-top : 15px;
-            margin: 0 auto 10px 10px;
-            border-radius: 10px;
-        }
-        .balloon:after {
-            content: '';
-            position: absolute;
-            height: 50px;
-            width: 50px;
-            border-radius: 25px;
-            z-index: -1;
-            background: #fff;
-            bottom: -20px;
-            left: 20px;
-        }
-        .balloon:before {
-            content: '';
-            position: absolute;
-            height: 50px;
-            width: 50px;
-            border-radius: 25px;
-            z-index: -3;
-            background: #ccc;
-            bottom: -15px;
-            left: 35px;
+            }
+                .balloon {
+                    display: inline-block;
+                    position: absolute;
+                    background: #ccc;
+                    height: 11vh;
+                    width: 15vw;
+                    top : 3.5em;
+                    padding-top : 15px;
+                    margin: 0 auto 10px 10px;
+                    border-radius: 10px;
+                }
+                .balloon:after {
+                    content: '';
+                    position: absolute;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 25px;
+                    z-index: -1;
+                    background: #fff;
+                    bottom: -20px;
+                    left: 20px;
+                }
+                .balloon:before {
+                    content: '';
+                    position: absolute;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 25px;
+                    z-index: -3;
+                    background: #ccc;
+                    bottom: -15px;
+                    left: 35px;
+                }
+            }
+            @media(max-width : 759px) {
+                .keeper {
+                display : inline-block;
+                width : 60vw;
+                height: 100%;
+                box-shadow : .5px .5px .5px .5px;
+                margin : auto auto 15px auto;
+                }
+                .balloon {
+                    display: block;
+                    position : absolute;
+                    z-index : 100;
+                    background: #ccc;
+                    height: 10vh;
+                    width: 80vw;
+                    border-radius: 10px;
+                    font-size : 1em;
+                }
+            }
+            
         }
         .row {
             margin : auto 10px auto 10px;

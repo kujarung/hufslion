@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 #페이지 숫자 부여
 gem 'will_paginate'
-
+gem 'rails_admin'
 
 # 직접 설치한 잼
 #로그인 관리

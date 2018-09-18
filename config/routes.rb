@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # 코드 작성할때 주석 적절히 사용할것
   ## 첫 대문 
   root to: "home#index"
