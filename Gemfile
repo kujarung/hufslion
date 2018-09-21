@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.7'
+ruby '2.4.4'
 gem 'will_paginate'
 gem 'rails_admin'
 gem 'simple_form'
