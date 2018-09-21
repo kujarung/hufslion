@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 ruby '2.4.4'
+gem 'rails', '~> 5.0.7'
+gem 'puma', '~> 3.0'
+
 gem 'will_paginate'
 gem 'rails_admin'
 gem 'simple_form'
@@ -8,8 +11,6 @@ gem 'tinymce-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'bootstrap'
 gem 'pry-rails'
-gem 'rails', '~> 5.0.7'
-gem 'puma', '~> 3.0'
 gem 'devise'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
