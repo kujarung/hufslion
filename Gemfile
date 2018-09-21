@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.4'
 #페이지 숫자 부여
 gem 'will_paginate'
 gem 'rails_admin'
@@ -61,6 +62,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.21'
   gem 'rails_12factor'
 end
