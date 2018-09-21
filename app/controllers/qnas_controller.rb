@@ -2,7 +2,7 @@ class QnasController < ApplicationController
   
   before_action :set_qna, only: [:show, :edit, :update, :destroy]
   def index
-    @qnas = Qna.page(params[:page]).order('created_at DESC')
+    @qnas = Qna.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
   
   def show

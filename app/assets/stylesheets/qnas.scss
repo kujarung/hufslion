@@ -94,7 +94,9 @@
     background-image : url("/home/whiteback.png");
     background-size : cover;
     height : 100vh;
-
+    img {
+        width : 30%;
+    }
     .showH1 {
         font-family: 'Black Han Sans', sans-serif;
         position : relative;
