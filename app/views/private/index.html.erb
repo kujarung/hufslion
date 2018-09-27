@@ -24,11 +24,50 @@ var tl=new TimelineMax({delay:0.1,repeat:0,yoyo:false,repeatDelay:0})
         <div class="balloon">가고자 하는 던젼을<br> 선택하게 용사여</div>
         </div>
         <div class="row">
-            <%= link_to "공지사항", notices_path, :class => "col notice" %>
-            <%= link_to "질문게시판", qnas_path, :class => "col quest" %>
+            <div class = "col notice"><%= link_to "공지사항", notices_path, :class => "outsideLink" %>
+                <% @notices.each do |notice| %>
+                <div class = "insideTable">
+                  <div class = "row">
+                    <span class = "inF">제목 : <%= link_to notice.title, notice %></span>
+                    <span>작성자 : <%= notice.user.email %></span><br>
+                  </div>
+                </div>
+                <% end %>
+            </div>
+            
+            <div class = "col quest"><%= link_to "질문게시판", qnas_path, :class => "outsideLink" %>
+                 <% @qnas.each do |qna| %>
+                <div class = "insideTable">
+                  <div class = "row">
+                    <span class = "inF">제목 : <%= link_to qna.title, qna %></span>
+                    <span>작성자 : <%= qna.user.email %></span><br>
+                  </div>
+                </div>
+                <% end %>
+            </div>
+            
             <div class="w-100"></div>
-            <%= link_to "세션자료", inclasses_path, :class => "col material" %>
-            <%= link_to "공유자료", tips_path, :class => "col tips" %>
+            
+            <div class = "col material"><%= link_to "세션자료", inclasses_path, :class => "outsideLink" %>
+                 <% @inclasses.each do |inclass| %>
+                <div class = "insideTable">
+                  <div class = "row">
+                    <span class = "inF">제목 : <%= link_to inclass.title, inclass %></span>
+                    <span>작성자 : <%= inclass.user.email %></span><br>
+                  </div>
+                </div>
+                <% end %>
+            </div>
+            <div class = "col tip"><%= link_to "공유자료", tips_path, :class => "outsideLink" %>
+                 <% @tips.each do |tip| %>
+                <div class = "insideTable">
+                  <div class = "row">
+                    <span class = "inF">제목 : <%= link_to tip.title, tip %></span>
+                    <span>작성자 : <%= tip.user.email %></span><br>
+                  </div>
+                </div>
+                <% end %>
+            </div>
         </div>
     </div>
     <nav class="navbar navbar-light downNav" style="background-color: #e3f2fd;">

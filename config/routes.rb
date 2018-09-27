@@ -17,9 +17,11 @@ Rails.application.routes.draw do
   end
   resources :inclasses
   resources :tips
-  
+  #게시판 post 라우팅
   get '/posts/new/:type' => 'posts#new'
   post '/posts/new' => 'posts#create'
+  
+  ## 댓글 라우팅
   post '/comments' => 'comments#create'
   delete '/comments/:id' => 'comments#destroy'
   # 파일 업로드

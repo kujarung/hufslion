@@ -138,8 +138,32 @@
                 height : 30vh;
                 margin : auto 5px 10px 5px;
                 box-shadow : 0.5px 0.5px 0.5px 0.5px grey;
+                text-align : center;
                 &:hover {
                     animation : hovering .5s ease forwards;
+                }
+                .outsideLink {
+                    font-size: 4vw;
+                    margin : auto auto 0 auto;
+                    a {
+                        font-size: 7vw;
+                    }                    
+                }                
+                .insideTable {
+                    display : block;
+                    position : relative;
+                    font-size : .9vw;
+                    .row{
+                        border-top : solid 1px grey;
+                        border-bottom : solid 1px grey;
+                        padding-left : 5%;
+                        //padding-right : 25%;
+                        margin-bottom : 1px;
+
+                        .inF {
+                            margin : auto auto auto 1em;
+                        }
+                    }
                 }
             }
             @keyframes hovering {
@@ -165,9 +189,6 @@
             .tips {
                 // background-image : url("/private/tips.png");
                 // background-size : cover;
-            }
-            a {
-                font-size: 7vw;
             }
         }
     }
