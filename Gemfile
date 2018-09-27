@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# 이미지 업로드
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
@@ -9,6 +9,10 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 ruby '2.4.4'
 gem 'rails', '~> 5.0.7'
 gem 'puma', '~> 3.0'
+
+#권한부여
+gem 'cancancan'
+gem 'rolify'
 
 gem 'will_paginate'
 gem 'rails_admin'

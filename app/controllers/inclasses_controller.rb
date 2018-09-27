@@ -1,6 +1,7 @@
 class InclassesController < ApplicationController
 
 before_action :set_inclass, only: [:show, :edit, :update, :destroy]
+ load_and_authorize_resource
   def index
     @inclasses = Inclass.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end

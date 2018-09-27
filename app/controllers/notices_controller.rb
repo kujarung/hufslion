@@ -1,6 +1,7 @@
 class NoticesController < ApplicationController
   
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
+   load_and_authorize_resource
   def index
     @notices = Notice.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
