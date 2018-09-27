@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'mini_magick'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+#페이지 숫자 부여
 ruby '2.4.4'
 gem 'rails', '~> 5.0.7'
 gem 'puma', '~> 3.0'

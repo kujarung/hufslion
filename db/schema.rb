@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180913112606) do
+ActiveRecord::Schema.define(version: 20180920114255) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20180913112606) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "images", force: :cascade do |t|
+    t.string   "alt"
+    t.string   "hint"
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "inclasses", force: :cascade do |t|
@@ -35,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180913112606) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
+    t.string   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_notices_on_user_id"
