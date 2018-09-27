@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'mini_magick'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 #페이지 숫자 부여
 gem 'will_paginate'
 gem 'rails_admin'

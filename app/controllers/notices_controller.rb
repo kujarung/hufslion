@@ -40,7 +40,7 @@ class NoticesController < ApplicationController
   end
   
   def notice_params 
-    params.require(:notice).permit(:user_id, :title, :content)
+    params.require(:notice).permit(:user_id, :title, :content, :file)
   end
 end
 

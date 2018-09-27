@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   post '/posts/new' => 'posts#create'
   post '/comments' => 'comments#create'
   delete '/comments/:id' => 'comments#destroy'
-  
+  # 파일 업로드
+  post '/tinymce_assets' => 'tinymce_assets#create'
 #여기 아래에 routes 코드 넣지 말것
   # get '/sorry' => 'home#sorry'
   # get '*path' => redirect('/sorry') 
